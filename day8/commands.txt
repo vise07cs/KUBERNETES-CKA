@@ -1,0 +1,29 @@
+to get replica set info with label env=rs
+
+kubectl get rs -l env=rs
+
+-----------------------------
+to get deployment obj info with label tier=backend
+
+kubectl get deployment -l tier=backend
+
+
+----------------------------
+ to scale replicas 
+
+kubectl scale --replicas=10 -f filename
+
+
+-------------------------------
+DEPLOYMENT OBJECT
+
+after configuring changes in the deployment object we must annotate the changes :
+
+kubectl annotate deployment deployment-name kubernetes.io/change-cause="write cause of change here"
+
+to see the history of revisions (changes done):
+
+kubectl rollout history deployment deployment-name
+
+to rollback to previous version :
+kubectl rollout undo deployment deployment-name --to-revision=1
