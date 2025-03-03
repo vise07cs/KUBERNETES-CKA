@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind:  Deployment
+metadata:
+  name: nginx-deploy2
+  labels:
+    env: demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      labels:
+        env: dev
+      name: vikram
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+ 

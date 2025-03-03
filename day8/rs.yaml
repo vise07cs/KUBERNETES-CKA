@@ -3,9 +3,9 @@ kind: ReplicaSet
 metadata:
   name: nginx-rs
   labels:
-    env: demo
+    env: rs
 spec:
-  replicas: 3  # ✅ Correct placement of replicas
+  replicas: 5  # ✅ Correct placement of replicas
   selector:
     matchLabels:  # ✅ Selector added
       env: demo
@@ -15,6 +15,6 @@ spec:
         env: demo
     spec:
       containers:
-      - name: nginx
+      - name: my-new-container
         image: nginx
       
