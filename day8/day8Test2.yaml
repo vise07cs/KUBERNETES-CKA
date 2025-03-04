@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         env: dev
-      name: vikram
+      # name: vikram
     spec:
       containers:
       - image: nginx

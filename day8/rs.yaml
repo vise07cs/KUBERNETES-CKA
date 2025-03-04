@@ -1,9 +1,10 @@
+# REPLICA SET
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: nginx-rs
   labels:
-    env: rs
+    env: demo
 spec:
   replicas: 5  # ✅ Correct placement of replicas
   selector:

@@ -3,13 +3,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: my-app
   labels:
     tier: backend
 spec:
-  replicas: 5  # ✅ Correct placement of replicas
+  replicas: 1 
   selector:
-    matchLabels:  # ✅ Selector added
+    matchLabels:  
       app: v1
   template:
     metadata:
@@ -18,5 +18,7 @@ spec:
     spec:
       containers:
       - name: my-new-container
-        image: nginx:1.23.4
+        image: httpd
+        ports:
+          - containerPort: 80
       
